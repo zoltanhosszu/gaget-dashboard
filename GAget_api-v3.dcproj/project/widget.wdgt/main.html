@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="Parts/parts.js" charset="utf-8"></script>
+    <script type="text/javascript" src="localizedStrings.js" charset="utf-8"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+    <script type="text/javascript" src="graph.js" charset="utf-8"></script>
+</head>
+<body onload="load();" apple-part="com.apple.Dashcode.part.StackLayout">
+    <div id="front">
+        <div apple-part="com.apple.Dashcode.part.imageLayout" id="bg_button_today" apple-group="image"><img class="apple-hidden" id="inner_image1" apple-group="image"></div>
+        <div apple-part="com.apple.Dashcode.part.imageLayout" id="bg_button_bounce" apple-group="image"><img class="apple-hidden" id="inner_image4" apple-group="image"></div>
+        <div apple-part="com.apple.Dashcode.part.imageLayout" id="bg_button_new" apple-group="image"><img class="apple-hidden" id="inner_image6" apple-group="image"></div>
+        <div id="text_updated" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+        <a apple-part="com.apple.Dashcode.part.imageLayout" id="button_settings" apple-group="image"><img></a>
+        <a apple-part="com.apple.Dashcode.part.imageLayout" id="button_refresh" apple-group="image"><img></a>
+        <div id="text_overview" apple-part="com.apple.Dashcode.part.text" apple-text-overflow="ellipsis">Visits overview for <span></span></div>
+        <div id="text_visitorstoday" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children maintext" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;part-width-dependent: true;"></div>
+        <div id="text_bouncerate" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children maintext" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;part-width-dependent: true;"></div>
+        <div id="text_avgtime" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children maintext" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;part-width-dependent: true;"></div>
+        <div id="text_newvisitors" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children maintext" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;part-width-dependent: true;"></div>
+        <div id="text_today_visitors" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;"></div>
+        <div id="text_today_info" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children maintext" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;"></div>
+        <div id="text_val_bouncerate" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;"></div>
+        <div id="text_val_avgtime" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;"></div>
+        <div id="text_val_newvisitors" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;"></div>
+        <div id="graph" apple-part="com.apple.Dashcode.part.canvas" class="apple-canvas apple-no-children" style="width: 391px; height: 105px;"></div>
+        <div id="bounce" apple-part="com.apple.Dashcode.part.canvas" class="apple-canvas apple-no-children" style="width: 22px; height: 22px"></div>
+        <div id="newvisitor" apple-part="com.apple.Dashcode.part.canvas" class="apple-canvas apple-no-children" style="width: 22px; height: 22px"></div>
+        <div apple-part="com.apple.Dashcode.part.imageLayout" id="button_today" apple-group="image"><img></div>
+        <div apple-part="com.apple.Dashcode.part.imageLayout" id="button_bounce" apple-group="image"><img></div>
+        <div apple-part="com.apple.Dashcode.part.imageLayout" id="button_new" apple-group="image"><img></div>
+        <div apple-part="com.apple.Dashcode.part.imageLayout" id="loadimage" apple-group="image"><img class="apple-hidden" src="Images/gagetload@2x.png" width="377" height="94" id="inner_image10" apple-group="image"></div>
+        <iframe src="http://gagetapp.com/osx-tracker.html" style="height: 0px; width: 0px; display: none; border: 0px; "></iframe>
+    </div>
+    <div id="back">
+        <div id="done" class="apple-no-children" apple-part="com.apple.Dashcode.part.glassbutton"></div>
+        <input id="username" type="text" name="google_user" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield">
+        <input id="password" type="password" name="google_pass" value="" class="apple-textfield apple-no-children" apple-part="com.apple.Dashcode.part.textfield">
+        <div id="button_auth" apple-part="com.apple.Dashcode.part.glassbutton" class="apple-no-children"></div>
+        <div id="text_userpass" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+        <div id="text_authmsg" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;"></div>
+        <select id="select_profile" apple-part="com.apple.Dashcode.part.backpopupbutton" apple-group="popup">
+        </select>
+        <select id="select_timeframe" apple-part="com.apple.Dashcode.part.backpopupbutton" apple-group="popup">
+            <option class="apple-hidden" value="week_1">One week</option>
+            <option class="apple-hidden" value="week_2" selected="selected">Two weeks</option>
+            <option class="apple-hidden" value="week_4">Four weeks</option>
+        </select>
+        <div id="text_profile" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis"></div>
+        <div id="text_version" apple-part="com.apple.Dashcode.part.text" class="apple-text apple-no-children maintext" apple-default-image-visibility="hidden" apple-text-overflow="ellipsis" apple-style="part-height-dependent: true;part-width-dependent: true;"></div>
+        <div apple-part="com.apple.Dashcode.part.imageLayout" id="branding" apple-group="image"><img class="apple-hidden" src="Images/branding@2x.png" apple-group="image"></div>
+    </div>
+</body>
+</html>
